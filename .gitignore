@@ -6,6 +6,5 @@ logs
 attachments
 *.patch
 
-
 /src/main/resources/pgdata/
 /src/test/resources/pgdata-test/
