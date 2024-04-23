@@ -8,6 +8,8 @@ app:
     max-pool-size: 100
 
 spring:
+  config:
+    import: optional:file:localhost.env[.properties]
   init:
     mode: never
   jpa:
