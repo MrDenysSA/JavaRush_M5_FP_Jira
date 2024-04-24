@@ -25,6 +25,25 @@ public class FileUtil {
             throw new IllegalRequestDataException("Select a file to upload.");
         }
 
+/*        Path pathDirectory = Paths.get(directoryPath);
+        if (!Files.exists(pathDirectory)) {
+            try {
+                Files.createDirectories(pathDirectory);
+            } catch (IOException e) {
+                throw new IllegalRequestDataException("Failed to create directories:" + directoryPath);
+            }
+        }
+
+
+        Path pathFile = Paths.get(directoryPath + fileName);
+//        Path pathFile = pathDirectory.resolve(fileName);
+        try {
+            Files.write(pathFile, multipartFile.getBytes());
+        } catch (IOException e) {
+            throw new IllegalRequestDataException("Failed to upload file:" + multipartFile.getOriginalFilename());
+        }*/
+
+        // todo: delete
         File dir = new File(directoryPath);
         if (dir.exists() || dir.mkdirs()) {
             File file = new File(directoryPath + fileName);
