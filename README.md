@@ -47,7 +47,7 @@ docker run -p 5433:5432 --name postgres-db-test -e POSTGRES_USER=jira -e POSTGRE
 | 3  | ✅     | Винести чутливу інформацію до окремого проперті файлу **localhost.env** |
 | 4  | ✅     | Тести на H2                                                             |
 | 5  |       |                                                                         |
-| 6  |       |                                                                         |
+| 6  | ✅      | рефакторинг методу `com.javarush.jira.bugtracking.attachment.FileUtil#upload`|
 | 7  |       |                                                                         |
 | 8  |       |                                                                         |
 | 9  |       |                                                                         |
