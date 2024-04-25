@@ -5,7 +5,6 @@ import com.javarush.jira.common.util.JsonUtil;
 import com.javarush.jira.login.Role;
 import com.javarush.jira.login.User;
 import com.javarush.jira.login.UserTo;
-import com.javarush.jira.profile.ProfileTo;
 
 public class UserTestData {
     public static final MatcherFactory.Matcher<User> USER_MATCHER = MatcherFactory.usingIgnoringFieldsComparator(
