@@ -75,7 +75,7 @@ create table USERS
 
 create table PROFILE
 (
-    ID                 bigint auto_increment primary key,
+    ID                 bigint unique not null,
     LAST_LOGIN         timestamp,
     LAST_FAILED_LOGIN  timestamp,
     MAIL_NOTIFICATIONS bigint,
