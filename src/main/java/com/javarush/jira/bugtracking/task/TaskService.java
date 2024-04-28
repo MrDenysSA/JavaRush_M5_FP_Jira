@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -146,5 +147,47 @@ public class TaskService {
         Task task = handler.getRepository().getExisted(taskId);
         task.getTags().add(tagText);
         handler.getRepository().save(task);
+    }
+
+    public Duration calculateTimeInProgress(Task task) {
+        List<Activity> activities = task.getActivities();
+        LocalDateTime inProgressTime = null;
+        LocalDateTime readyForReviewTime = null;
+
+        for (Activity activity : activities) {
+            if ("in_progress".equals(activity.getStatusCode())) {
+                inProgressTime = activity.getUpdated();
+            } else if ("ready_for_review".equals(activity.getStatusCode())) {
+                readyForReviewTime = activity.getUpdated();
+                break;
+            }
+        }
+
+        if (inProgressTime != null && readyForReviewTime != null) {
+            return Duration.between(inProgressTime, readyForReviewTime);
+        } else {
+            return Duration.ZERO;
+        }
+    }
+
+    public Duration calculateTimeInTesting(Task task) {
+        List<Activity> activities = task.getActivities();
+        LocalDateTime readyForReviewTime = null;
+        LocalDateTime doneTime = null;
+
+        for (Activity activity : activities) {
+            if ("ready_for_review".equals(activity.getStatusCode())) {
+                readyForReviewTime = activity.getUpdated();
+            } else if ("done".equals(activity.getStatusCode())) {
+                doneTime = activity.getUpdated();
+                break;
+            }
+        }
+
+        if (readyForReviewTime != null && doneTime != null) {
+            return Duration.between(readyForReviewTime, doneTime);
+        } else {
+            return Duration.ZERO;
+        }
     }
 }

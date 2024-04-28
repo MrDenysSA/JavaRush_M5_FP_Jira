@@ -319,8 +319,15 @@ INSERT INTO ACTIVITY(AUTHOR_ID, TASK_ID, UPDATED, COMMENT, TITLE, DESCRIPTION, E
                      PRIORITY_CODE)
 values (6, 1, '2023-05-15 09:05:10', null, 'Data', null, 3, 'epic', 'in_progress', 'low'),
        (5, 1, '2023-05-15 12:25:10', null, 'Data', null, null, null, null, 'normal'),
-       (6, 1, '2023-05-15 14:05:10', null, 'Data', null, 4, null, null, null), ---task 118----
+       (6, 1, '2023-05-15 14:05:10', null, 'Data', null, 4, null, null, null),
+       ---task 118----
        (11, 118, '2023-05-16 10:05:10', null, 'UI tab of tasks', null, 4, 'task', 'in_progress', 'normal'),
        (5, 118, '2023-05-16 11:10:10', null, 'UI tab of tasks', null, null, null, null, 'high'),
-       (11, 118, '2023-05-16 12:30:10', null, 'UI tab of tasks', null, 2, null, null, null);
+       (11, 118, '2023-05-16 12:30:10', null, 'UI tab of tasks', null, 2, null, null, null),
+       ---task 8 ---
+       (16, 87, '2024-04-10 11:30:10', null, 'for time counting', 'for time counting - task in_progress', 1, null, 'in_progress', 'low'),
+       (16, 87, '2024-04-11 12:30:10', null, 'for time counting', 'for time counting - task ready_for_review', 1, null, 'ready_for_review', 'low'),
+       (16, 87, '2024-04-12 13:30:00', null, 'for time counting', 'for time counting - task done', 1, null, 'done', 'low');
+
+
 
