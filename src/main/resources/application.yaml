@@ -34,16 +34,16 @@ spring:
 
   liquibase:
     changeLog: "classpath:db/changelog.sql"
-
   # Jackson Fields Serialization
+
   jackson:
     visibility:
       field: any
       getter: none
       setter: none
       is-getter: none
-
   # https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-cache
+
   cache:
     cache-names: users
     caffeine.spec: maximumSize=10000,expireAfterAccess=5m
@@ -80,7 +80,6 @@ spring:
   sql:
     init:
       mode: always
-
   mail:
     properties:
       mail:
@@ -92,8 +91,8 @@ spring:
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
     port: ${MAIL_PORT}
-  thymeleaf.check-template-location: false
 
+  thymeleaf.check-template-location: false
   mvc.throw-exception-if-no-handler-found: true
   web.resources.add-mappings: false
 
