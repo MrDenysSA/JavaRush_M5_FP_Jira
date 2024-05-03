@@ -41,7 +41,8 @@ public class ThymeleafConfig {
             setCharacterEncoding("UTF-8");
         }};
     }
-     @Bean
+
+    @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();
         slr.setDefaultLocale(Locale.getDefault());

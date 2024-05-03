@@ -28,31 +28,24 @@
 
 ___
 ## Запуск
-###### Для MacOS DB:
+Postgres DB
 ```
 docker run -p 5432:5432 --name postgres-db -e POSTGRES_USER=jira -e POSTGRES_PASSWORD=JiraRush -v ./src/main/resources/pgdata:/var/lib/postgresql/data -d postgres
-docker run -p 5433:5432 --name postgres-db-test -e POSTGRES_USER=jira -e POSTGRES_PASSWORD=JiraRush -v ./src/test/resources/pgdata-test:/var/lib/postgresql/data -d postgres
 ```
-- SDK 17
-- Сбилдить <strong>mvn clean install</strong>
-- Запустити Spring Boot програму (JiraRushApplication) з профілем **prod**
-
-
+## [localhost:8080/](****)
 ## Список виконаних задач:
 
 | №  | Done | Info                                                                                                    |
 |:---|:-----|:--------------------------------------------------------------------------------------------------------|
-| 1  | ✅ | Розібратися зі структурою проєкту (onboarding)                                                          |
-| 2  | ✅ | Видалити соціальні мережі: vk, yandex.                                                                  |
-| 3  | ✅ | Винести чутливу інформацію до окремого проперті файлу **localhost.env**                                 |
-| 4  | ✅ | Тести на H2                                                                                             |
-| 5  | ✅ | Тести для всіх публічних методів контролера **ProfileRestController**                                   |
-| 6  | ✅ | Рефакторинг методу `com.javarush.jira.bugtracking.attachment.FileUtil#upload`                           |
-| 7  | ✅ | task_tag                                                                                                |
-| 8  | ✅ | підрахунок часу "**ACTIVITY**"  class:**TaskService**                                                   |
-| 9  |      |                                                                                                         |
-| 10 |      |                                                                                                         |
-| 11 | ✅ | Додати локалізацію. **En, Ru, Ua** файли: **index.html, email-confirmation.html,  password-reset.html** |
-| 12 |      |                                                                                                         |
-
-docker-compose up --build
+| 1  | ✅| Розібратися зі структурою проєкту (onboarding)                                                          |
+| 2  | ✅| Видалити соціальні мережі: vk, yandex.                                                                  |
+| 3  | ✅| Винести чутливу інформацію до окремого проперті файлу **localhost.env**                                 |
+| 4  | ✅| Тести на H2                                                                                             |
+| 5  | ✅| Тести для всіх публічних методів контролера **ProfileRestController**                                   |
+| 6  | ✅| Рефакторинг методу `com.javarush.jira.bugtracking.attachment.FileUtil#upload`                           |
+| 7  | ✅| task_tag                                                                                                |
+| 8  | ✅| підрахунок часу "**ACTIVITY**"  class:**TaskService**                                                   |
+| 9  | ✅| Написати Dockerfile для основного сервера                                                               |
+| 10 | ✅| Написати docker-compose файл для запуску контейнера сервера разом з БД та nginx.                        |
+| 11 | ✅| Додати локалізацію. **En, Ru, Ua** файли: **index.html, email-confirmation.html,  password-reset.html** |
+| 12 | ⛔️| **Переробити** механізм розпізнавання «свій-чужий» між фронтом і беком з JSESSIONID на JWT.             |

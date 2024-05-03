@@ -106,11 +106,12 @@ public class MvcConfig implements WebMvcConfigurer {
         lci.setParamName("lang");
         return lci;
     }
+
     @Bean("messageSource")
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource =
                 new ResourceBundleMessageSource();
-        messageSource.setBasenames("languages/messages");
+        messageSource.setBasenames("messages/messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }

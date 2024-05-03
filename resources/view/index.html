@@ -14,5 +14,17 @@
                 <button class="btn btn-primary btn-lg mt-3" type="submit" th:text="#{indexMSLogout}">Logout</button>
             </form>
         </div>
+
+        <script th:inline="javascript">
+            function changeLang(lang) {
+                var urlParams = new URLSearchParams(window.location.search);
+                urlParams.set('lang', lang);
+                window.location.href = window.location.pathname + '?' + urlParams.toString();
+            }
+        </script>
+        <button class="btn btn-primary btn-lg mt-3" type="button" onclick="changeLang('ua')">Українська</button>
+        <button class="btn btn-primary btn-lg mt-3" type="button" onclick="changeLang('en')">English</button>
+        <button class="btn btn-primary btn-lg mt-3" type="button" onclick="changeLang('ru')">Русский</button>
+
     </appMain>
 </th:block>
