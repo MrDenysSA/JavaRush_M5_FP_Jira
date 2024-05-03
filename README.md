@@ -30,7 +30,7 @@ ___
 ## Запуск
 Postgres DB
 ```
-docker run -p 5432:5432 --name postgres-db -e POSTGRES_USER=jira -e POSTGRES_PASSWORD=JiraRush -v ./src/main/resources/pgdata:/var/lib/postgresql/data -d postgres
+docker run -p 5432:5432 --name postgres-db -e POSTGRES_USER=jira -e POSTGRES_PASSWORD=JiraRush -e postgresql/data/pgdata -v ./pgdata:/var/lib/postgresql/data -d postgres 
 ```
 ## [localhost:8080/](****)
 ## Список виконаних задач:
